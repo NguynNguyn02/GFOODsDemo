@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebBanHang.Models.EF.ProductCategory>
+<style>
+    .danhmucsanpham {
+        padding: 10px 20px 0 0;
+        width: 100%;
+        height: 400px;
+        background-position: 50% 50%;
+    }
+
+    .banner_category a {
+        font-family: Amsi Narw;
+        color: aliceblue;
+    }
+
+</style>
+    <div class="row">
+        <div class="col-12">
+            <div class="text title">
+                <p>Danh mục sản phẩm</p>
+            </div>
+            @if (Model != null && Model.Any())
+            {
+                <div class="banner">
+                    <div class="container">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-md-3">
+                                    <div class="banner_item align-items-center" style="background-image: url(@item.Icon);border-radius:10px">
+                                        <div class="banner_category">
+                                            <a href="@item.Icon">@item.Title</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+            
+        </div>
+        
+    </div>
+
+
+
